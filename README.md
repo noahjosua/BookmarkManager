@@ -7,7 +7,7 @@ Die Vorgaben lauteten dabei wie folgt:
   3. Sie dürfen keine schwergewichtigen Frameworks (z.B. Wordpress) verwenden.
 
 ### Anleitung 
-1. Installiere node.js: https://nodejs.org/en/
+1. Installiere node.js: https://nodejs.org/en/ 
 2. Download der command-line-sqlite3-tools: https://sqlite.org/download.html
 3. Entpacken des komprimierten Ordners und anschließendes Anlegen als Umgebungsvariable: Dafür der Path Variable den Pfad zu dem entpackten Ordner hinzufügen
 4. Repository clonen oder herunterladen, in einer IDE (z.B. VS Code) öffnen
@@ -28,7 +28,9 @@ Die Vorgaben lauteten dabei wie folgt:
 9. Öffne deinen Browser navigiere auf folgende Seite: http://localhost:3000/start
 10. Viel Spaß!
 
-Wer nodemon(Server Monitoring) benutzen möchte, kann zusätzlich noch folgendes Kommando ausführen: npm install -g nodemon und den Server dann starten mit nodemon server.js
+Wer nodemon(Server Monitoring) benutzen möchte, kann zusätzlich noch folgendes Kommando ausführen: 
+ npm install -g nodemon 
+und den Server dann starten mit nodemon server.js
 
 ### Troubleshooting nodemon
 Beim Versuch nodemon zu starten, kann es auf Windows-Rechnern dazu kommen, dass ein Sicherheitsfehler im Terminal von VS Code ausgegeben wird.
