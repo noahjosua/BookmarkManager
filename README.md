@@ -6,23 +6,23 @@ Die Vorgaben lauteten dabei wie folgt:
   2. Die Webanwendung soll eine Benutzerverwaltung mit Datenbank verwenden. 
   3. Sie dürfen keine schwergewichtigen Frameworks (z.B. Wordpress) verwenden.
 
-# Anleitung 
+### Anleitung 
 1. Installiere node.js: https://nodejs.org/en/
 2. Download der command-line-sqlite3-tools: https://sqlite.org/download.html
 3. Entpacken des komprimierten Ordners und anschließendes Anlegen als Umgebungsvariable: Dafür der Path Variable den Pfad zu dem entpackten Ordner hinzufügen
 4. Repository clonen oder herunterladen, in einer IDE (z.B. VS Code) öffnen
 5. Terminal öffnen und sicherstellen, dass du dich im Projektordner befindest
 6. Folgende Befehle nacheinander ausführen und ggf. mit Enter bestätigen
-   npm init
-   npm install 
-   npm install express --save
-   npm install body-parser --save 
-   npm install ejs --save
-   npm install sqlite3 --save
-   npm install bcrypt --save
-   npm install cookie-parser --save
-   npm install express-session --save
-   npm install express-fileupload --save
+   - npm init
+   - npm install 
+   - npm install express --save
+   - npm install body-parser --save 
+   - npm install ejs --save
+   - npm install sqlite3 --save
+   - npm install bcrypt --save
+   - npm install cookie-parser --save
+   - npm install express-session --save
+   - npm install express-fileupload --save
 7. ggf. Module updaten: npm audit fix und npm fund
 8. Du bist startklar! Starte den Server mit node server.js
 9. Öffne deinen Browser navigiere auf folgende Seite: http://localhost:3000/start
@@ -30,7 +30,7 @@ Die Vorgaben lauteten dabei wie folgt:
 
 Wer nodemon(Server Monitoring) benutzen möchte, kann zusätzlich noch folgendes Kommando ausführen: npm install -g nodemon und den Server dann starten mit nodemon server.js
 
-# Troubleshooting nodemon
+### Troubleshooting nodemon
 Beim Versuch nodemon zu starten, kann es auf Windows-Rechnern dazu kommen, dass ein Sicherheitsfehler im Terminal von VS Code ausgegeben wird.
 'nodemon: Die Datei "…\npm\nodemon.ps1" kann nicht geladen werden, da die Ausführung von Skripts auf diesem System deaktiviert ist. […]'
 
