@@ -21,6 +21,6 @@
     "express-session": "^1.17.1",
     "node-sass": "^8.0.0",
     "sass": "^1.32.2",
-    "sqlite3": "^5.0.1"
+    "sqlite3": "^5.1.4"
   }
 }
