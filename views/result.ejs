@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meine Seite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar is-dark sticky">
+        <div class="navbar-menu">
+            <div class="navbar-start is-centered-absolute"><a class="navbar-item" href="/userOverview">Zurück zur Übersicht</a></div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons"><a class="button is-white is-outlined" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+    <div class="section fade">
+        <h2 class="title is-spaced">
+            Suchergebnis
+        </h2>
+    </div>
+
+    <div class="cards fade">
+        <% for(let i=0; i < usersearch.length; i++){ %>
+            <div class="card" style="margin-top: 5%;">
+                <div class="card-content">
+                    <h2>
+                        <span><%= usersearch[i].username %></span>
+                    </h2>
+                    <a href="/details/<%= usersearch[i].userID %>">
+                        <img src="/images/profilepics/<%= usersearch[i].profilepicture %>" >
+                    </a>
+                    <br>
+                    <div class="card-footer">
+                        <span class="card-footer-item hashtag">
+    
+                                    User-ID:
+                                    <%= usersearch[i].userID %>
+                        </span>
+                    </div>
+                  
+                </div>
+                
+            </div>
+            <% } %>
+    </div>
+    </section>
+</body>
+
+</html>

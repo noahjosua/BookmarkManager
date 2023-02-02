@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Meine Seite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+
+    <nav class="navbar is-dark sticky">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/start"><img src="/images/Icon_White 1.png" alt="Logo" width="auto" style="min-height: 40px;"></a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start is-centered-absolute"><a class="navbar-item" href="/start">Start</a><a class="navbar-item" href="/newbookmark">Neues Lesezeichen</a></div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons"><a class="button is-white is-outlined" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+    <div class="section fade">
+        <div class="container">
+            <h2 class="title is-spaced">
+                <span>Hallo</span>
+                <span class="has-text-primary"><%= username %></span>,
+                <span>schön dich zu sehen!</span>
+            </h2>
+            <img class="subtitle thumbnail" style="border-radius: 50%;" src="/images/profilepics/<%= picture %>" width="150px">
+            <form action="/search" method="POST">
+                <label class="label">Durchsuche deine Bookmarks nach Titel</label>
+                <input class="input is-rounded is-small" type="text" id="text" style="width: 33%;" name="bookmarksearch" placeholder="Suchen..." title="Nach Bookmarks suchen">
+                <button class="button is-dark is-rounded is-small" type="submit">Los</button>
+            </form>
+
+            <div class="fade" style="color:grey;">
+                <% if (typeof error != undefined) { %>
+                    <%= error %>
+                        <% } %>
+            </div>
+        </div>
+        <br>
+        <section class="container">
+            <div class="cards fade">
+                <% for(let i=0; i < bookmarks.length; i++){ %>
+                    <div class="card">
+                        <div class="card-content">
+                            <h2>
+                                <%= bookmarks[i].type %>
+                            </h2>
+                            <p class="subtitle">
+                                <a class="special" target="_blank" href=" <%= bookmarks[i].url %>">
+                                    <%= bookmarks[i].title %>
+                                </a>
+                            </p>
+                            <a target="_blank" href=" <%=bookmarks[i].url %>">
+                                <img class="image" src="/images/Backgrounds/<%= Math.floor((Math.random() * 11) + 1) %>.PNG">
+                            </a>
+                            <br>
+                            <div class="buttons is-centered">
+                                <form action="/update/<%=bookmarks[i].bookmarkID%>" method="POST">
+                                    <button class="button is-dark is-rounded icon" type="submit">
+                                    <span class="fa fa-pencil-alt"></span>
+                                 </button>
+                                </form>
+                                <form action="/delete/<%=bookmarks[i].bookmarkID%>" method="POST">
+                                    <button class="button is-dark is-rounded icon" type="submit">
+                                    <span class="far fa-trash-alt"></span>
+                                 </button>
+                                </form>
+                            </div>
+
+
+                            <div class="card-footer">
+                                <span class="card-footer-item hashtag">
+                                    #
+                                    <%= bookmarks[i].hashtags %>
+                                            </span>
+                            </div>
+                        </div>
+                    </div>
+                    <% } %>
+            </div>
+        </section>
+    </div>
+
+
+
+
+</body>
+
+</html>

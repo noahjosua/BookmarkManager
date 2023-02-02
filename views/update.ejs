@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bookmark ändern</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+
+    <body>
+        <nav class="navbar is-dark sticky">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/start"><img src="/images/Icon_White 1.png" alt="Logo" width="auto" style="min-height: 40px;"></a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start is-centered-absolute"><a class="navbar-item" href="/start">Start</a><a class="navbar-item" href="/mypage">Meine Seite</a></div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons"><a class="button is-white is-outlined" href="/logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+
+        </nav>
+
+
+        <div class="section">
+            <div class="container has-text-centered">
+                <h2 class="title is-spaced">
+                    <span>Lesezeichen bearbeiten</span>
+                </h2>
+            </div>
+
+            <form style="text-align: center; margin-top: 5%;" id="form" action="/onupdate/<%=bookmarks[0].bookmarkID%>" method="POST">
+                <div class="field">
+                    <label class="label" for="text">Titel:</label>
+                    <div class="control">
+                        <input class="input is-rounded is-small" style="width: 33%;" id="text" name="title" size="30" value="<%=bookmarks[0].title%>">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label" for="text">Kategorie:</label>
+                    <div class="control">
+                        <input class="input is-rounded is-small" style="width: 33%;" id="text" name="category" size="30" value="<%=bookmarks[0].type%>">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="text">URL:</label>
+                    <div class="control">
+                        <input class="input is-rounded is-small" style="width: 33%;" id="text" name="url" value="<%=bookmarks[0].url%>" pattern="https?://.*" title="https://www.example.com oder http://www.example.com">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label" for="text">Hashtag(s):</label>
+                    <div class="control">
+                        <input class="input is-rounded is-small" style="width: 33%;" id="text" name="hashtag" size="30" value="<%=bookmarks[0].text%>">
+                    </div>
+                </div>
+
+                <div style="margin-top: 2%;" class="form-field">
+                    <button id="btn" class="button is-dark is-rounded is-small" type="submit" value="save">Ändern</button>
+
+                </div>
+
+            </form>
+
+
+    </body>
+
+</html>

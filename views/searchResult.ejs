@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Suchergebnisse</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+
+
+    <nav class="navbar is-dark sticky">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/start"><img class="i" src="/images/Icon_White 1.png" alt="Logo" width="auto" style="min-height: 40px;"></a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start is-centered-absolute"><a class="navbar-item" href="/start">Start</a><a class="navbar-item" href="/newbookmark">Neues Lesezeichen</a><a class="navbar-item" href="/mypage">Meine Seite</a></div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons"><a class="button is-white is-outlined" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="cards">
+        <% for(let i=0; i < bookmarksearch.length; i++){ %>
+            <div class="card fade" style="margin-top: 5%;">
+                <div class="card-content">
+                    <h2>
+
+                        <a target="_blank" class="special" href="<%= bookmarksearch[i].url %>">
+                            <%= bookmarksearch[i].title %>
+                        </a>
+                    </h2>
+
+                    <div class="buttons is-centered">
+                        <form action="/update/<%=bookmarksearch[i].bookmarkID%>" method="POST">
+                            <button class="button is-dark is-rounded icon" type="submit">
+                            <span class="fas fa-pencil-alt"></span>
+                         </button>
+                        </form>
+                        <form action="/delete/<%=bookmarksearch[i].bookmarkID%>" method="POST">
+                            <button class="button is-dark is-rounded icon" type="submit">
+                            <span class="far fa-trash-alt"></span>
+                         </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar is-dark sticky">
+        <div class="navbar-menu">
+            <div class="navbar-start is-centered-absolute"><a class="navbar-item" href="/userOverview">Zurück zur Übersicht</a></div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons"><a class="button is-white is-outlined" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+
+    <div class="section fade">
+        <h2 class="title is-spaced">
+            Userdetails
+        </h2>
+    </div>
+    <section class="container">
+
+        <div class="cards fade">
+            <% for(let i=0; i < bookmarks.length; i++){ %>
+                <div class="card">
+                    <div class="card-content">
+
+                        <h2>
+
+                            <%= bookmarks[i].type %>
+                        </h2>
+                        <p class="subtitle">
+                            <a class="special" target="_blank" href=" <%= bookmarks[i].url %>">
+                                <%= bookmarks[i].title %>
+                            </a>
+                        </p>
+
+
+                        <br>
+
+                        <div class="card-footer">
+                            <span class="card-footer-item hashtag">
+
+                                #
+                                <%= bookmarks[i].hashtags %>
+                                        </span>
+                        </div>
+                    </div>
+                </div>
+
+                <% } %>
+        </div>
+
+    </section>
+
+</body>
+
+</html>

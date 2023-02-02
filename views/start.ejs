@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Startseite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar is-dark sticky">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/start"><img src="/images/Icon_White 1.png" alt="Logo" width="auto" style="min-height: 40px;"></a>
+        </div>
+        <div class="navbar-menu">
+            <div class="navbar-start is-centered-absolute"><a class="navbar-item" href="/mypage">Meine Seite</a><a class="navbar-item" href="/registration">Registrieren</a></div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons"><a class="button is-white is-outlined" href="/login">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section class="hero is-medium is-dark is-bold fade">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Willkommen zum Bookmark Collector der HAW Hamburg
+                </h1>
+                <br>
+                <h2 class="subtitle">
+                    Nach erfolgreicher Registrierung hast du die Möglichkeit Bookmarks unter eigenen Kategorien zu speichern und mit persönlichen Tags zu versehen. <br><br> Auf dieser Seite siehst du bereits erstellte Bookmarks anderer User.
+                </h2>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+
+        <div class="cards">
+            <% for(let i=0; i < bookmark.length; i++){ %>
+                <div class="card fade">
+                    <div class="card-content">
+                        <h2>
+                            <a class="special" target="_blank" href=" <%=bookmark[i].url %>">
+                                <%= bookmark[i].title %>
+                            </a>
+                        </h2>
+                        <a target="_blank" target="_blank" href=" <%=bookmark[i].url %>">
+                            <img class="image" src="/images/Backgrounds/<%= Math.floor((Math.random() * 11) + 1) %>.PNG">
+                        </a>
+
+                    </div>
+                </div>
+
+                <% } %>
+        </div>
+
+
+    </section>
+    <br>
+    </section>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

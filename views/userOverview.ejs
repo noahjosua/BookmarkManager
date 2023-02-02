@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User: Übersicht</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+    <nav class="navbar is-dark sticky">
+
+        <div class="navbar-menu">
+            <div class="navbar-start is-centered-absolute"></div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons"><a class="button is-white is-outlined" href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <br>
+
+
+    <div class="section fade">
+        <div class="container">
+
+            <h2 class="title is-spaced">
+                <span>Hallo</span>
+                <span class="has-text-primary">Admin</span>,
+                <span>schön dich zu sehen!</span>
+            </h2>
+            <br>
+            <form action="/usersearch" method="POST">
+                <div class="fade" style="color:grey;">
+                    <% if (typeof error != undefined) { %>
+                        <%= error %>
+                            <% } %>
+                </div>
+                <label class="label">Durchsuche alle User nach Namen oder ID</label>
+                <input class="input is-rounded is-small" type="text" id="text" style="width: 33%;" name="usersearch" placeholder="Suchen..." title="Nach Benutzern suchen">
+                <button class="button is-dark is-rounded is-small" type="submit">Los</button>
+
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+
+    <section class="container">
+        <div class="cards fade">
+            <% for(let i=0; i < user.length; i++){ %>
+                <div class="card">
+                    <div class="card-content">
+                        <h2>
+                            <%= user[i].username %>
+                        </h2>
+
+                        <a href="/details/<%= user[i].userID %>">
+                            <img src="/images/profilepics/<%= user[i].profilepicture %>" >
+                        </a>
+
+
+                        <br>
+
+                        <div class="card-footer">
+                            <span class="card-footer-item hashtag">
+
+                                User-ID:
+                                <%= user[i].userID %>
+                                        </span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <% } %>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
