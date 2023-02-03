@@ -23,7 +23,7 @@ Die Vorgaben lauteten dabei wie folgt:
    - npm install cookie-parser --save
    - npm install express-session --save
    - npm install express-fileupload --save
-7. ggf. Module updaten: npm audit fix und npm fund
+7. ggf. Module updaten: npm audit fix 
 8. Du bist startklar! Starte den Server mit node server.js
 9. Öffne deinen Browser navigiere auf folgende Seite: http://localhost:3000/start
 10. Viel Spaß!
@@ -42,4 +42,6 @@ Es handelt sich hierbei um ein Rechteproblem, das in den meisten Fällen wie fol
 3. nodemon sollte sich nun wie gewünscht starten lassen. Zukünftig muss VS Code auch nicht jedes Mal als Adminstratorausgeführt werden.
    
 * Lösung von https://stackoverflow.com/questions/37700536/visual-studio-code-terminal-how-to-run-a-command-with-administrator-rights/63084419#answer-63084419(Zugriff am 25.03.2021, 16:31 Uhr);und https://stackoverflow.com/questions/63423584/how-to-fix-error-nodemon-ps1-cannot-be-loaded-because-running-scripts-is-disabl#answer-63424744(Zugriff am 17.04.2021, 16:32 Uhr)
-   
+
+### Error: Cannot find module '...\node_modules\sqlite3\lib\binding\napi-v6-win32-unknown-x64\node_sqlite3.node'
+--> npm rebuild, dann Server neustarten 
