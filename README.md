@@ -1,4 +1,4 @@
-# BookmarkCollector
+# BookmarkManager
 Hierbei handelt es sich um eine einfache Webanwendung, die im Rahmen einer Studienleistung erstellt wurde.
  
 Die Vorgaben lauteten dabei wie folgt: 
